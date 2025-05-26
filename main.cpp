@@ -1,7 +1,7 @@
 #include <esp_now.h>
 #include <esp_wifi.h>
 #include <M5Cardputer.h>
-#include <M5_LoRa_E220_JP.h>
+#include <M5_LoRa_E220.h>
 #include <SD.h>
 #include <WiFi.h>
 
@@ -16,7 +16,7 @@
 
 uint8_t messageNonce = 0;
 
-LoRa_E220_JP lora;
+LoRa_E220 lora;
 struct LoRaConfigItem_t loraConfig;
 struct RecvFrame_t loraFrame;
 TaskHandle_t loraReceiveTaskHandle = NULL;
@@ -223,7 +223,7 @@ void drawSystemBar()
   canvasSystemBar->setTextDatum(middle_left);
   canvasSystemBar->drawString(username, sx + 3 * m, sy + sh / 2);
   canvasSystemBar->setTextDatum(middle_center);
-  canvasSystemBar->drawString(espNowMode ? "EspNowChat" : "LoRaChat", sw / 2, sy + sh / 2);
+  canvasSystemBar->drawString(espNowMode ? "EspNowChat" : "Mido_Chat", sw / 2, sy + sh / 2);
   if (millis() - lastTx < RxTxShowDelay)
     draw_tx_indicator(canvasSystemBar, sw - 71, sy + 1 * (sh / 3) - 1);
   if (millis() - lastRx < RxTxShowDelay)
