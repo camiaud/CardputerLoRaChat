@@ -2,6 +2,7 @@
 #include <esp_wifi.h>
 #include <M5Cardputer.h>
 #include <M5_LoRa_E220.h>
+#include <M5_LoRa_E220_JP.h>
 #include <SD.h>
 #include <WiFi.h>
 
